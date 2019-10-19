@@ -54,7 +54,7 @@ int main(int argc, char** argv) {
     if (!fileValid(argv[1])) return -1;
 
     DictionaryTrie* dt = new DictionaryTrie();
-
+    vector<string> words;
     // Read all the tokens of the file in order to get every word
     cout << "Reading file: " << argv[1] << endl;
 
@@ -72,9 +72,11 @@ int main(int argc, char** argv) {
         getline(cin, word);
         cout << "Enter a number of completions:" << endl;
         cin >> numberOfCompletions;
-
+        words = dt->predictCompletions(word, numberOfCompletions);
         // TODO
-
+        for (auto i : words) {
+            cout << i << endl;
+        }
         cout << "Continue? (y/n)" << endl;
         cin >> cont;
         cin.ignore();

@@ -1,0 +1,16 @@
+Reading file: data/unique_freq_dict.txt
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+and
+a
+at
+are
+as
+all
+about
+an
+also
+any
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
