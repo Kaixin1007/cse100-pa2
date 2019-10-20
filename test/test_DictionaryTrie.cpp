@@ -42,7 +42,7 @@ TEST(DictTrieTests, INSERT_TEST) {
     // for (auto i : test) {
     //     cout << i << endl;
     // }
-    // cout << "stop!" << endl;
+    cout << "stop!" << endl;
 }
 
 /* TODO */

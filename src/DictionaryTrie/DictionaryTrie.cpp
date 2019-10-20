@@ -116,10 +116,8 @@ void DictionaryTrie::findChildren(Node*& node, string word) {
 void DictionaryTrie::deleteAll(Node*& root) {
     if (root == nullptr) return;
     for (auto it : root->map_word) {
-        if (it.second != nullptr) {
-            deleteAll(it.second);
-            delete it.second;
-        }
+        deleteAll(it.second);
+        // delete it.second;
     }
     delete root;
 }
