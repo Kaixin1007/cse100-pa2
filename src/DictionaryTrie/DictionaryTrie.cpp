@@ -120,7 +120,7 @@ void DictionaryTrie::deleteAll(Node*& root) {
             deleteAll(it.second);
             delete it.second;
         }
-        return;
     }
+    delete root;
 }
 // void getAllchildren1(string prefix) { getAllchildren(this.root, prefix); }
