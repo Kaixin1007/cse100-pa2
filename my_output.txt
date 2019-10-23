@@ -1,16 +1,10 @@
-Reading file: data/unique_freq_dict.txt
+Reading file: data/my_input.txt
 Enter a prefix/pattern to search for:
 Enter a number of completions:
-and
-a
-at
-are
-as
-all
-about
-an
-also
-any
+11111
+1111
+111
+123
+11
+1
 Continue? (y/n)
-Enter a prefix/pattern to search for:
-Enter a number of completions:

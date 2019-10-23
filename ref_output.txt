@@ -1,1 +1,10 @@
-Reading file: data/freq_dict.txt
+Reading file: data/my_input.txt
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+11111
+1111
+111
+123
+11
+1
+Continue? (y/n)
