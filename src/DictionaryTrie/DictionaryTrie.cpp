@@ -38,6 +38,7 @@ vector<string> DictionaryTrie::predictCompletions(string prefix,
                                                   unsigned int numCompletions) {
     my_quene q;
     vector<string> words;
+    prefixword.clear();
     getAllchildren(root, prefix);
 
     for (auto i : prefixword) {

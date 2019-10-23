@@ -67,6 +67,7 @@ int main(int argc, char** argv) {
 
     char cont = 'y';
     unsigned int numberOfCompletions;
+    cout << "1" << endl;
     while (cont == 'y') {
         cout << "Enter a prefix/pattern to search for:" << endl;
         getline(cin, word);
