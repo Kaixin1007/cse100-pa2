@@ -64,7 +64,7 @@ class DictionaryTrie {
     /**
      * @brief DFS helper function to look for all children
      */
-    void findChildren(Node*& node, string word, unsigned int numCompletions);
+    void findChildren(Node*& root, string word, unsigned int numCompletions);
     // // void addPrefixword(const pair<int, string>& node,
     //                    unsigned int numCompletions);
 

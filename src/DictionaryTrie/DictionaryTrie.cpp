@@ -40,24 +40,11 @@ vector<string> DictionaryTrie::predictCompletions(string prefix,
     my_quene empty;
     swap(empty, prefixword);  // clear quene
     getAllchildren(root, prefix, numCompletions);
-    // for (auto i : prefixword) {
-    //     if (q.size() < numCompletions)
-    //         q.push(i);
-    //     else {
-    //         if (q.top() <= i) {
-    //             q.pop();
-    //             q.push(i);
-    //         }
-    //     }
-    //     // words.push_back(i.second);
-    // }
-    // if size < required number, update numCompletions
     numCompletions =
         numCompletions < prefixword.size() ? numCompletions : prefixword.size();
 
     vector<string> words(numCompletions);
     for (int j = 0; j < numCompletions; j++) {
-        // words[numCompletions - 1 - j] = q.top().second;
         // words[numCompletions - 1 - j] = prefixword.top().second;
         words[j] = prefixword.top().second;
         prefixword.pop();
@@ -137,6 +124,7 @@ void DictionaryTrie::getAllchildren(Node*& root, string prefix,
     Node* node = root;
     string temp = prefix;
     unsigned int cnt = 0;
+    // run to the prefix's end word
     for (int i = 0; i < prefix.length(); i++) {
         if (node->map_word.find(prefix[i]) != node->map_word.end()) {
             node = node->map_word[prefix[i]];
@@ -155,26 +143,38 @@ void DictionaryTrie::getAllchildren(Node*& root, string prefix,
     return;
 }
 //每次DFS只找一个单词
-void DictionaryTrie::findChildren(Node*& node, string word,
+void DictionaryTrie::findChildren(Node*& root, string word,
                                   unsigned int numCompletions) {
     string temp = word;
+    Node* node = root;
     if (node == nullptr) return;
+
     // if (prefixword.size() >= numCompletions)
     //     // heap max
     //     if ((prefixword.top().first > node->max_freq)) return;
     pair<int, char> max_node = node->word_sort.top();
     // heap中顶元素 freq 和下一个元素的freq 相等时候，说明下一个元素是结尾
-    if (max_node.first == node->map_word[max_node.second]->freq) {
-        pair<int, string> test =
-            make_pair(max_node.first, word + max_node.second);
-        prefixword.push(test);
+    while (max_node.first != node->map_word[max_node.second]->freq) {
+        temp += max_node.second;
         node->word_sort.pop();
-    } else {
-        // 不是结尾
-        temp = temp + max_node.second;
-        findChildren(node->map_word[max_node.second], temp, numCompletions);
-        node->word_sort.pop();
-    }
+        node = node->map_word[max_node.second];
+        max_node = node->word_sort.top();
+        }
+    pair<int, string> test = make_pair(max_node.first, temp + max_node.second);
+    prefixword.push(test);
+    node->word_sort.pop();
+
+    // if (max_node.first == node->map_word[max_node.second]->freq) {
+    //     pair<int, string> test =
+    //         make_pair(max_node.first, word + max_node.second);
+    //     prefixword.push(test);
+    //     node->word_sort.pop();
+    // } else {
+    //     // 不是结尾
+    //     temp = temp + max_node.second;
+    //     findChildren(node->map_word[max_node.second], temp, numCompletions);
+    //     node->word_sort.pop();
+    // }
 
     // if (!(node->word_sort.empty())) {
     //     pair<int, char> max_node = node->word_sort.top();
