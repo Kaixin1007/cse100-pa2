@@ -1,7 +1,9 @@
 /**
- * TODO: File HEADER
+ * TODO: test_DictionaryTrie.cpp
  *
- * Author:
+ * Author:Kaixin Lin
+ * Finished PA2
+ * Test file about DictionaryTries
  */
 
 #include <algorithm>
@@ -29,20 +31,20 @@ TEST(DictTrieTests, INSERT_TEST) {
     vector<string> test;
     dict.insert("abc", 2);
     dict.insert("ab", 3);
-    dict.insert("a", 4);
+    dict.insert("a", 10);
+    // dict.insert("an", 12);
+    dict.insert("and", 11);
+    dict.insert("at", 9);
     dict.insert("ba", 5);
-    dict.insert("aaaaaaa", 6);
-    dict.insert("aefgw", 7);
-    dict.insert("degre", 3);
+    dict.insert("aaa", 6);
+    dict.insert("aef", 7);
+    dict.insert("degr", 8);
     ASSERT_EQ(dict.find("ab"), true);
     ASSERT_EQ(dict.find("abeed"), false);
     ASSERT_EQ(dict.insert("ab", 5), false);
-    // cout << dict.predictCompletions("a", 10) << endl;
-    test = dict.predictCompletions("a", 10);
+    test = dict.predictCompletions("a", 4);
     // for (auto i : test) {
     //     cout << i << endl;
     // }
-    // cout << "stop!" << endl;
+    cout << "stop!" << endl;
 }
-
-/* TODO */
