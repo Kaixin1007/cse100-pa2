@@ -9,7 +9,9 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${relativeFile}.executable",
-            "args": [],
+            "args": [
+                "data/unique_freq_dict.txt"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -29,9 +31,9 @@
             "name": "c++ debug main",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/test/bst/main.cpp.executable",
+            "program": "${workspaceFolder}/build/src/autocomplete.cpp.executable",
             "args": [
-                "data/actors.txt"
+                "data/unique_freq_dict.txt"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

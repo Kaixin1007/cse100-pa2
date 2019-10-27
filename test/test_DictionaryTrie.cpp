@@ -29,9 +29,7 @@ TEST(DictTrieTests, EMPTY_TEST) {
 TEST(DictTrieTests, INSERT_TEST) {
     DictionaryTrie dict;
     vector<string> test, test1, test2;
-    dict.insert("abc", 2);
-    dict.insert("ab", 3);
-    dict.insert("a", 10);
+
     // dict.insert("an", 12);
     dict.insert("and", 11);
     dict.insert("at", 9);
@@ -39,10 +37,16 @@ TEST(DictTrieTests, INSERT_TEST) {
     dict.insert("aaa", 6);
     dict.insert("aef", 7);
     dict.insert("degr", 8);
-    ASSERT_EQ(dict.find("ab"), true);
+    dict.insert("american", 12);
+    dict.insert("america", 11);
+    dict.insert("am", 15);
+    dict.insert("again", 13);
+    dict.insert("aga", 1);
+    dict.insert("a", 11);
+    ASSERT_EQ(dict.find("a"), true);
     ASSERT_EQ(dict.find("abeed"), false);
-    ASSERT_EQ(dict.insert("ab", 5), false);
-    test = dict.predictCompletions("a", 4);
+    ASSERT_EQ(dict.insert("a", 5), false);
+    test = dict.predictCompletions("a", 8);
     test1 = dict.predictCompletions("a", 2);
     // for (auto i : test) {
     //     cout << i << endl;
