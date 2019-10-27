@@ -28,7 +28,7 @@ TEST(DictTrieTests, EMPTY_TEST) {
 }
 TEST(DictTrieTests, INSERT_TEST) {
     DictionaryTrie dict;
-    vector<string> test, test1;
+    vector<string> test, test1, test2;
     dict.insert("abc", 2);
     dict.insert("ab", 3);
     dict.insert("a", 10);

@@ -87,10 +87,14 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
         if ((node->word_sort1.empty()))
             node->word_sort1.push_back(make_pair(freq, word[count]));
         else {
-            pair<int, char> ns = make_pair(freq, word[count]);
-            auto pos = find_if(node->word_sort1.begin(), node->word_sort1.end(),
-                               [ns](auto s) { return s.first < ns.first; });
-            node->word_sort1.insert(pos, ns);
+            pair<int, char> value = make_pair(freq, word[count]);
+            auto pos =
+                lower_bound(node->word_sort1.begin(), node->word_sort1.end(),
+                            value, greater<pair<int, char>>());
+            // auto pos = find_if(node->word_sort1.begin(),
+            // node->word_sort1.end(),
+            //                    [ns](auto s) { return s.first < ns.first; });
+            node->word_sort1.insert(pos, value);
         }
         return true;
     }
@@ -102,10 +106,11 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
         if ((node->word_sort1.empty()))
             node->word_sort1.push_back(make_pair(freq, word[count]));
         else {
-            pair<int, char> ns = make_pair(freq, word[count]);
-            auto pos = find_if(node->word_sort1.begin(), node->word_sort1.end(),
-                               [ns](auto s) { return s.first < ns.first; });
-            node->word_sort1.insert(pos, ns);
+            pair<int, char> value = make_pair(freq, word[count]);
+            auto pos =
+                lower_bound(node->word_sort1.begin(), node->word_sort1.end(),
+                            value, greater<pair<int, char>>());
+            node->word_sort1.insert(pos, value);
         }
     }
 
