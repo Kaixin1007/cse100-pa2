@@ -46,7 +46,7 @@ vector<string> DictionaryTrie::predictCompletions(string prefix,
     vector<string> words(numCompletions);
     for (int j = 0; j < numCompletions; j++) {
         // words[numCompletions - 1 - j] = prefixword.top().second;
-        words[j] = prefixword.top().second;
+        words[numCompletions - 1 - j] = prefixword.top().second;
         prefixword.pop();
     }
 
@@ -82,12 +82,35 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
         Node* next = node->map_word[word[count]];
         next->freq = freq;
         next->max_freq = next->max_freq > freq ? next->max_freq : freq;
-        node->word_sort.push(make_pair(freq, word[count]));
+        // node->word_sort.push(make_pair(freq, word[count]));
+
+        // if ((node->word_sort1.empty()))
+        //     node->word_sort1.push_back(make_pair(freq, word[count]));
+        // else {
+        //     pair<int, char> ns = make_pair(freq, word[count]);
+        //     auto pos = find_if(node->word_sort1.begin(),
+        //     node->word_sort1.end(),
+        //                        [ns](auto s) { return s.first < ns.first; });
+        //     node->word_sort1.insert(pos, ns);
+        // }
         return true;
     }
     // if subtree insert successfully, update the word_sort variable
     bool sub = insert(node->map_word[word[count]], word, freq, count + 1);
-    if (sub == true) node->word_sort.push(make_pair(freq, word[count]));
+    if (sub == true) {
+        // node->word_sort.push(make_pair(freq, word[count]));
+
+        // if ((node->word_sort1.empty()))
+        //     node->word_sort1.push_back(make_pair(freq, word[count]));
+        // else {
+        //     pair<int, char> ns = make_pair(freq, word[count]);
+        //     auto pos = find_if(node->word_sort1.begin(),
+        //     node->word_sort1.end(),
+        //                        [ns](auto s) { return s.first < ns.first; });
+        //     node->word_sort1.insert(pos, ns);
+        // }
+    }
+
     return true && sub;
 }
 
@@ -132,89 +155,133 @@ void DictionaryTrie::getAllchildren(Node*& root, string prefix,
             return;
         }
     }
-
-    while ((!(node->word_sort.empty())) && cnt < numCompletions) {
-        findChildren(node, prefix, numCompletions);
-        cnt++;
-    }
-    if (node->freq > 0) {
-        prefixword.push(make_pair(node->freq, prefix));
-    }
+    findChildren(node, prefix, numCompletions);
+    // while ((!(node->word_sort.empty())) && cnt < numCompletions) {
+    //     findChildren(node, prefix, numCompletions);
+    //     cnt++;
+    // }
+    // if (node->freq > 0) {
+    //     prefixword.push(make_pair(node->freq, prefix));
+    // }
     return;
 }
+
 //每次DFS只找一个单词
+// void DictionaryTrie::findChildren(Node*& root, string word,
+//                                   unsigned int numCompletions) {
+//     string temp = word;
+//     Node* node = root;
+//     if (node == nullptr) return;
+//     pair<int, char> max_node = node->word_sort1[numCompletions];
+//     while (max_node.first != node->map_word[max_node.second]->freq) {
+//         temp += max_node.second;
+//         node->word_sort.pop();
+//         node = node->map_word[max_node.second];
+//     }
+// }
 void DictionaryTrie::findChildren(Node*& root, string word,
                                   unsigned int numCompletions) {
     string temp = word;
     Node* node = root;
     if (node == nullptr) return;
+    if (prefixword.size() >= numCompletions)  // heap max
+        if ((prefixword.top().first > node->max_freq)) return;
 
-    // if (prefixword.size() >= numCompletions)
-    //     // heap max
-    //     if ((prefixword.top().first > node->max_freq)) return;
-    pair<int, char> max_node = node->word_sort.top();
-    // heap中顶元素 freq 和下一个元素的freq 相等时候，说明下一个元素是结尾
-    while (max_node.first != node->map_word[max_node.second]->freq) {
-        temp += max_node.second;
-        node->word_sort.pop();
-        node = node->map_word[max_node.second];
-        max_node = node->word_sort.top();
+    //存在节点
+    if (node->freq > 0) {
+        pair<int, string> test = make_pair(node->freq, word);
+        if (prefixword.size() < numCompletions) {
+            prefixword.push(test);
+        } else {
+            if (prefixword.top() < test) {
+                prefixword.pop();
+                prefixword.push(test);
+            }
         }
-    pair<int, string> test = make_pair(max_node.first, temp + max_node.second);
-    prefixword.push(test);
-    node->word_sort.pop();
-
-    // if (max_node.first == node->map_word[max_node.second]->freq) {
-    //     pair<int, string> test =
-    //         make_pair(max_node.first, word + max_node.second);
-    //     prefixword.push(test);
-    //     node->word_sort.pop();
-    // } else {
-    //     // 不是结尾
-    //     temp = temp + max_node.second;
-    //     findChildren(node->map_word[max_node.second], temp, numCompletions);
-    //     node->word_sort.pop();
-    // }
-
-    // if (!(node->word_sort.empty())) {
-    //     pair<int, char> max_node = node->word_sort.top();
-    //     temp = temp + max_node.second;
-    //     findChildren(node->map_word[max_node.second], temp, numCompletions);
-    //     node->word_sort.pop();
-    // } else {
-    //     // add
-    //     if (node->freq > 0) {
-    //         pair<int, string> test = make_pair(node->freq, word);
-    //         if (prefixword.size() < numCompletions) {
-    //             prefixword.push(test);
-    //         } else {
-    //             if (prefixword.top() < test) {
-    //                 prefixword.pop();
-    //                 prefixword.push(test);
-    //             }
-    //         }
-    //     }
-    // }
-
-    // for(int i = 0;i<node->word_sort.size();i++){
-    //     temp = temp + node->word_sort[]
-    // }
-    // addPrefixword(make_pair(node->freq, word), numCompletions);
-    // while (!(node->word_sort.empty())) {
-    //     pair<int, char> max_node = node->word_sort.top();
-    //     temp = temp + max_node.second;
-    //     findChildren(node->map_word[max_node.second], temp, numCompletions);
-    //     node->word_sort.pop();
-    //     temp = word;
-    // }
-    // for (auto it : node->map_word) {
-    //     if (it.second != nullptr) {
-    //         temp = temp + it.first;
-    //         findChildren(it.second, temp, numCompletions);
-    //         temp = word;
-    //     }
-    // }
+    }
+    for (auto it : node->map_word) {
+        if (it.second != nullptr) {
+            temp = temp + it.first;
+            findChildren(it.second, temp, numCompletions);
+            temp = word;
+        }
+    }
 }
+// //每次DFS只找一个单词
+// void DictionaryTrie::findChildren(Node*& root, string word,
+//                                   unsigned int numCompletions) {
+//     string temp = word;
+//     Node* node = root;
+//     if (node == nullptr) return;
+//     pair<int, char> max_node = node->word_sort.top();
+//     // // if (prefixword.size() >= numCompletions)
+//     // //     // heap max
+//     // //     if ((prefixword.top().first > node->max_freq)) return;
+//     // pair<int, char> max_node = node->word_sort.top();
+//     // // heap中顶元素 freq 和下一个元素的freq
+//     相等时候，说明下一个元素是结尾
+//     // while (max_node.first != node->map_word[max_node.second]->freq) {
+//     //     temp += max_node.second;
+//     //     node->word_sort.pop();
+//     //     node = node->map_word[max_node.second];
+//     //     max_node = node->word_sort.top();
+//     //     }
+//     // pair<int, string> test = make_pair(max_node.first, temp +
+//     // max_node.second); prefixword.push(test); node->word_sort.pop();
+
+//     if (max_node.first == node->map_word[max_node.second]->freq) {
+//         pair<int, string> test =
+//             make_pair(max_node.first, word + max_node.second);
+//         prefixword.push(test);
+//         node->word_sort.pop();
+//     } else {
+//         // 不是结尾
+//         temp = temp + max_node.second;
+//         findChildren(node->map_word[max_node.second], temp,
+//         numCompletions); node->word_sort.pop();
+//     }
+
+//     // if (!(node->word_sort.empty())) {
+//     //     pair<int, char> max_node = node->word_sort.top();
+//     //     temp = temp + max_node.second;
+//     //     findChildren(node->map_word[max_node.second], temp,
+//     numCompletions);
+//     //     node->word_sort.pop();
+//     // } else {
+//     //     // add
+//     //     if (node->freq > 0) {
+//     //         pair<int, string> test = make_pair(node->freq, word);
+//     //         if (prefixword.size() < numCompletions) {
+//     //             prefixword.push(test);
+//     //         } else {
+//     //             if (prefixword.top() < test) {
+//     //                 prefixword.pop();
+//     //                 prefixword.push(test);
+//     //             }
+//     //         }
+//     //     }
+//     // }
+
+//     // for(int i = 0;i<node->word_sort.size();i++){
+//     //     temp = temp + node->word_sort[]
+//     // }
+//     // addPrefixword(make_pair(node->freq, word), numCompletions);
+//     // while (!(node->word_sort.empty())) {
+//     //     pair<int, char> max_node = node->word_sort.top();
+//     //     temp = temp + max_node.second;
+//     //     findChildren(node->map_word[max_node.second], temp,
+//     numCompletions);
+//     //     node->word_sort.pop();
+//     //     temp = word;
+//     // }
+//     // for (auto it : node->map_word) {
+//     //     if (it.second != nullptr) {
+//     //         temp = temp + it.first;
+//     //         findChildren(it.second, temp, numCompletions);
+//     //         temp = word;
+//     //     }
+//     // }
+// }
 void DictionaryTrie::deleteAll(Node*& root) {
     if (root == nullptr) return;
     for (auto it : root->map_word) {
@@ -222,8 +289,6 @@ void DictionaryTrie::deleteAll(Node*& root) {
     }
     delete root;
 }
-
-bool cmp(pair<int, char>& a, pair<int, char>& b) { return a.first > b.first; }
 
 // void DictionaryTrie::addPrefixword(const pair<int, string>& node,
 //                                    unsigned int numCompletions) {

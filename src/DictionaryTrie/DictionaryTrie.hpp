@@ -40,6 +40,7 @@ class DictionaryTrie {
         // vector<pair<int, char>> word_sort;
         // stores sorted words according to their frequency
         my_node_quene word_sort;
+        vector<pair<int, char>> word_sort1;
         // constructor
         Node() { freq = max_freq = 0; }
     };
@@ -68,9 +69,9 @@ class DictionaryTrie {
     // // void addPrefixword(const pair<int, string>& node,
     //                    unsigned int numCompletions);
 
-    // priority_queue
+    // priority_queue 最小堆
     typedef priority_queue<pair<int, string>, vector<pair<int, string>>,
-                           less<pair<int, string>>>
+                           greater<pair<int, string>>>
         my_quene;
 
   public:
@@ -107,5 +108,4 @@ class DictionaryTrie {
  * @brief Descending order comparison function according to the word's
  * freuency
  */
-bool cmp(pair<int, char>& a, pair<int, char>& b);
 #endif  // DICTIONARY_TRIE_HPP
