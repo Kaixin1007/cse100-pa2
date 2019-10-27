@@ -273,6 +273,23 @@ void DictionaryTrie::findChildren(Node*& node, string word,
             }
         }
     }
+    if (node->isCompressed) {
+        curNode = node->word_sort[0];
+        if (prefixword.size() >= numCompletions) {
+            if (prefixword.top().first > curNode.first) {
+                return;
+            }
+        }
+        if (prefixword.size() < numCompletions) {
+            prefixword.push(
+                make_pair(curNode.first, word + node->compressedWord));
+        } else {
+            prefixword.push(
+                make_pair(curNode.first, word + node->compressedWord));
+            prefixword.pop();
+        }
+        return;
+    }
     // iterator nodes according to max_frequency order
     for (int i = 0; i < node->word_sort.size(); i++) {
         curNode = node->word_sort[i];
@@ -281,17 +298,6 @@ void DictionaryTrie::findChildren(Node*& node, string word,
             if (prefixword.top().first > curNode.first) {
                 break;
             }
-        }
-        if (node->isCompressed) {
-            if (prefixword.size() < numCompletions) {
-                prefixword.push(make_pair(node->word_sort[0].first,
-                                          word + node->compressedWord));
-            } else {
-                prefixword.push(make_pair(node->word_sort[0].first,
-                                          word + node->compressedWord));
-                prefixword.pop();
-            }
-            continue;
         }
         findChildren(node->map_word[curNode.second], word + curNode.second,
                      numCompletions);
