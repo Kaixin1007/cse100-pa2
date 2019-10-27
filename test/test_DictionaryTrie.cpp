@@ -28,7 +28,7 @@ TEST(DictTrieTests, EMPTY_TEST) {
 }
 TEST(DictTrieTests, INSERT_TEST) {
     DictionaryTrie dict;
-    vector<string> test;
+    vector<string> test, test1;
     dict.insert("abc", 2);
     dict.insert("ab", 3);
     dict.insert("a", 10);
@@ -43,6 +43,7 @@ TEST(DictTrieTests, INSERT_TEST) {
     ASSERT_EQ(dict.find("abeed"), false);
     ASSERT_EQ(dict.insert("ab", 5), false);
     test = dict.predictCompletions("a", 4);
+    test1 = dict.predictCompletions("a", 2);
     // for (auto i : test) {
     //     cout << i << endl;
     // }

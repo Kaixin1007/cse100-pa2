@@ -84,15 +84,14 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
         next->max_freq = next->max_freq > freq ? next->max_freq : freq;
         // node->word_sort.push(make_pair(freq, word[count]));
 
-        // if ((node->word_sort1.empty()))
-        //     node->word_sort1.push_back(make_pair(freq, word[count]));
-        // else {
-        //     pair<int, char> ns = make_pair(freq, word[count]);
-        //     auto pos = find_if(node->word_sort1.begin(),
-        //     node->word_sort1.end(),
-        //                        [ns](auto s) { return s.first < ns.first; });
-        //     node->word_sort1.insert(pos, ns);
-        // }
+        if ((node->word_sort1.empty()))
+            node->word_sort1.push_back(make_pair(freq, word[count]));
+        else {
+            pair<int, char> ns = make_pair(freq, word[count]);
+            auto pos = find_if(node->word_sort1.begin(), node->word_sort1.end(),
+                               [ns](auto s) { return s.first < ns.first; });
+            node->word_sort1.insert(pos, ns);
+        }
         return true;
     }
     // if subtree insert successfully, update the word_sort variable
@@ -100,15 +99,14 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
     if (sub == true) {
         // node->word_sort.push(make_pair(freq, word[count]));
 
-        // if ((node->word_sort1.empty()))
-        //     node->word_sort1.push_back(make_pair(freq, word[count]));
-        // else {
-        //     pair<int, char> ns = make_pair(freq, word[count]);
-        //     auto pos = find_if(node->word_sort1.begin(),
-        //     node->word_sort1.end(),
-        //                        [ns](auto s) { return s.first < ns.first; });
-        //     node->word_sort1.insert(pos, ns);
-        // }
+        if ((node->word_sort1.empty()))
+            node->word_sort1.push_back(make_pair(freq, word[count]));
+        else {
+            pair<int, char> ns = make_pair(freq, word[count]);
+            auto pos = find_if(node->word_sort1.begin(), node->word_sort1.end(),
+                               [ns](auto s) { return s.first < ns.first; });
+            node->word_sort1.insert(pos, ns);
+        }
     }
 
     return true && sub;
@@ -181,31 +179,46 @@ void DictionaryTrie::getAllchildren(Node*& root, string prefix,
 // }
 void DictionaryTrie::findChildren(Node*& root, string word,
                                   unsigned int numCompletions) {
-    string temp = word;
+    // string temp = word;
     Node* node = root;
+    pair<int, char> curNode;
+    pair<int, string> insNode;
     if (node == nullptr) return;
     if (prefixword.size() >= numCompletions)  // heap max
         if ((prefixword.top().first > node->max_freq)) return;
 
     //存在节点
     if (node->freq > 0) {
-        pair<int, string> test = make_pair(node->freq, word);
+        insNode = make_pair(node->freq, word);
         if (prefixword.size() < numCompletions) {
-            prefixword.push(test);
+            prefixword.push(insNode);
         } else {
-            if (prefixword.top() < test) {
+            if (prefixword.top() < insNode) {
                 prefixword.pop();
-                prefixword.push(test);
+                prefixword.push(insNode);
             }
         }
     }
-    for (auto it : node->map_word) {
-        if (it.second != nullptr) {
-            temp = temp + it.first;
-            findChildren(it.second, temp, numCompletions);
-            temp = word;
+
+    //遍历节点
+    for (int i = 0; i < node->word_sort1.size(); i++) {
+        curNode = node->word_sort1[i];
+        // 当前节点小于heap中最小元素，则退出，否则继续遍历
+        if (prefixword.size() >= numCompletions) {
+            if (prefixword.top().first >= curNode.first) {
+                break;
+            }
         }
+        findChildren(node->map_word[curNode.second], word + curNode.second,
+                     numCompletions);
     }
+    // for (auto it : node->map_word) {
+    //     if (it.second != nullptr) {
+    //         temp = temp + it.first;
+    //         findChildren(it.second, temp, numCompletions);
+    //         temp = word;
+    //     }
+    // }
 }
 // //每次DFS只找一个单词
 // void DictionaryTrie::findChildren(Node*& root, string word,
