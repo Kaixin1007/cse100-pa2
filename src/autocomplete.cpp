@@ -64,7 +64,7 @@ int main(int argc, char** argv) {
 
     Utils::loadDict(*dt, in);
     in.close();
-
+    bool isUnderscores = false;
     char cont = 'y';
     unsigned int numberOfCompletions;
     while (cont == 'y') {
@@ -72,7 +72,14 @@ int main(int argc, char** argv) {
         getline(cin, word);
         cout << "Enter a number of completions:" << endl;
         cin >> numberOfCompletions;
-        words = dt->predictCompletions(word, numberOfCompletions);
+        isUnderscores = false;
+        for (int i = 0; i < word.length(); i++) {
+            if (word[i] == '_') isUnderscores = true;
+        }
+        if (isUnderscores == false)
+            words = dt->predictCompletions(word, numberOfCompletions);
+        else
+            words = dt->predictUnderscores(word, numberOfCompletions);
         // TODO
         for (auto i : words) {
             cout << i << endl;

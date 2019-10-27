@@ -1,6 +1,218 @@
 Reading file: data/unique_freq_dict.txt
 Enter a prefix/pattern to search for:
 Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+at
+as
+an
+aw
+am
+ay
+al
+ah
+ad
+au
+az
+ax
+av
+ar
+ap
+ao
+ab
+aa
+ai
+ac
+ak
+aj
+ag
+af
+ae
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+was
+wes
+wos
+wis
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+guy
+buy
+puy
+muy
+ruy
+luy
+quy
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+some
+said
+same
+seem
+show
+such
+shes
+sure
+side
+stop
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+be
+of
+is
+in
+to
+it
+im
+he
+do
+on
+we
+at
+by
+or
+as
+go
+my
+if
+me
+so
+up
+an
+no
+us
+oh
+id
+mr
+hw
+ow
+um
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+a
+i
+l
+o
+j
+b
+u
+d
+s
+k
+c
+m
+r
+e
+t
+f
+q
+y
+g
+p
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+people
+theres
+should
+really
+school
+become
+family
+theyre
+little
+always
+system
+before
+happen
+during
+number
+things
+mother
+groans
+doesnt
+around
+father
+though
+krusty
+friend
+grunts
+wanted
+minute
+member
+almost
+social
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+album
+abbas
+abbes
+albas
+ambit
+ambry
+abbey
+abbys
+aybar
+aubyn
+aubry
+auber
+arbys
+arbre
+arbor
+amber
+ambos
+amble
+ambas
+albie
+alban
+akbar
+abbot
+aaber
+abbia
+abbie
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+arms
+army
+agma
+alme
+atma
+auml
+ammo
+arme
+armd
+arma
+aome
+amme
+alma
+aime
+alms
+aims
+aima
+acme
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+tahrs
+tahoe
+tehty
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
 and
 a
 at
@@ -21,44 +233,4 @@ always
 away
 area
 around
-anything
-among
-almost
-ago
-already
-aw
-actually
-art
-add
-allow
-Continue? (y/n)
-Enter a prefix/pattern to search for:
-Enter a number of completions:
-wsw
-wspr
-wsp
-ws
-Continue? (y/n)
-Enter a prefix/pattern to search for:
-Enter a number of completions:
-Continue? (y/n)
-Enter a prefix/pattern to search for:
-Enter a number of completions:
-Continue? (y/n)
-Enter a prefix/pattern to search for:
-Enter a number of completions:
-uyt
-Continue? (y/n)
-Enter a prefix/pattern to search for:
-Enter a number of completions:
-say
-she
-so
-see
-some
-simpson
-should
-still
-school
-something
 Continue? (y/n)

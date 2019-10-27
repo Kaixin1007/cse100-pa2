@@ -37,12 +37,17 @@ class DictionaryTrie {
         unordered_map<char, Node*> map_word;
         // stores the node's max frequency
         unsigned int max_freq;
-        // vector<pair<int, char>> word_sort;
         // stores sorted words according to their frequency
         vector<pair<int, char>> word_sort;
-        vector<pair<int, char>> word_sort1;
+        bool isCompressed;
+        bool isIterator;
+        string compressedWord;
+        // vector<pair<int, char>> word_sort1;
         // constructor
-        Node() { freq = max_freq = 0; }
+        Node() {
+            freq = max_freq = 0;
+            isCompressed = isIterator = false;
+        }
     };
     /**
      * @brief insert helper function
@@ -86,6 +91,7 @@ class DictionaryTrie {
     Node* root;
     // vector<pair<int, string>> prefixword;
     my_quene prefixword;
+    my_quene underscoresword;
     /* DictionaryTrie constructor */
     DictionaryTrie();
 
@@ -108,6 +114,10 @@ class DictionaryTrie {
     /* TODO: add function header */
     vector<string> predictUnderscores(string pattern,
                                       unsigned int numCompletions);
+
+    void predictUnderscoresHelper(Node*& node, string pattern,
+                                  unsigned int numCompletions,
+                                  unsigned int count, string str);
 
     /* DictionaryTrie destructor  */
     ~DictionaryTrie();
