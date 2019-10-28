@@ -242,7 +242,7 @@ void DictionaryTrie::findChildren(Node*& node, string word,
         if (prefixword.size() < numCompletions) {
             prefixword.push(insNode);
         } else {
-            if (prefixword.top() < insNode) {
+            if (comparePair(prefixword.top(), insNode)) {
                 prefixword.push(insNode);
                 prefixword.pop();
             }
@@ -364,7 +364,7 @@ void DictionaryTrie::predictUnderscoresHelper(Node*& root, string pattern,
             if (underscoresword.size() < num) {
                 underscoresword.push(insNode);
             } else {
-                if (underscoresword.top() < insNode) {
+                if (comparePair(underscoresword.top(), insNode)) {
                     underscoresword.push(insNode);
                     underscoresword.pop();
                 }
@@ -389,6 +389,11 @@ void DictionaryTrie::predictUnderscoresHelper(Node*& root, string pattern,
             predictUnderscoresHelper(next, pattern, num, count + 1, temp);
         }
     }
+}
+bool DictionaryTrie::comparePair(const pair<int, string>& p1,
+                                 const pair<int, string>& p2) {
+    if (p1.first == p2.first) return p1.second > p2.second;
+    return p1.first < p2.first;
 }
 // void DictionaryTrie::addPrefixword(const pair<int, string>& node,
 //                                    unsigned int numCompletions) {

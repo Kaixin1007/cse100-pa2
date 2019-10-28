@@ -41,10 +41,7 @@ class DictionaryTrie {
         vector<pair<int, char>> word_sort;
         // vector<pair<int, char>> word_sort1;
         // constructor
-        Node() {
-            freq = max_freq = 0;
-           
-        }
+        Node() { freq = max_freq = 0; }
     };
     /**
      * @brief insert helper function
@@ -71,6 +68,9 @@ class DictionaryTrie {
     // // void addPrefixword(const pair<int, string>& node,
     //                    unsigned int numCompletions);
     // priority_queue 最小堆
+    // 比较函数  p1<p2 返回真 否则为假  频率一样 字母越小 越大
+    bool comparePair(const pair<int, string>& p1, const pair<int, string>& p2);
+
     struct cmp {
         bool operator()(const pair<int, string>& a,
                         const pair<int, string>& b) {
