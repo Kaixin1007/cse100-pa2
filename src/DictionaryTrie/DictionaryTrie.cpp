@@ -233,6 +233,7 @@ void DictionaryTrie::findChildren(Node*& node, string word,
     // Node* node = root;
     pair<int, char> curNode;
     pair<int, string> insNode;
+    my_node_quene myquene;
     if (node == nullptr) return;
     // if (prefixword.size() >= numCompletions)  // heap max
     //     if ((prefixword.top().first > node->max_freq)) return;
@@ -248,10 +249,18 @@ void DictionaryTrie::findChildren(Node*& node, string word,
             }
         }
     }
-    // string temp = word;
-    // for (auto it : node->map_word) {
-
-    // }
+    string temp = word;
+    for (auto it : node->map_word) {
+        curNode = make_pair(it.second->max_freq, it.first);
+        myquene.push(curNode);
+    }
+    for (int i = 0; i < myquene.size(); ++i) {
+        curNode = myquene.top();
+        if (prefixword.size() >= numCompletions)
+            if (prefixword.top().first > curNode.first) break;
+        findChildren(node->map_word[curNode.second], word + curNode.second,
+                     numCompletions);
+    }
     // iterator nodes according to max_frequency order
     // for (int i = 0; i < node->word_sort.size(); i++) {
     //     curNode = node->word_sort[i];
@@ -264,13 +273,14 @@ void DictionaryTrie::findChildren(Node*& node, string word,
     //     findChildren(node->map_word[curNode.second], word + curNode.second,
     //                  numCompletions);
     // }
-    //直接遍历
-    string temp = word;
-    for (auto it : node->map_word) {
-        temp = temp + it.first;
-        findChildren(it.second, temp, numCompletions);
-        temp = word;
-        }
+
+    // //直接遍历
+    // string temp = word;
+    // for (auto it : node->map_word) {
+    //     temp = temp + it.first;
+    //     findChildren(it.second, temp, numCompletions);
+    //     temp = word;
+    //     }
 }
 
 //
@@ -394,6 +404,11 @@ void DictionaryTrie::predictUnderscoresHelper(Node*& root, string pattern,
 }
 bool DictionaryTrie::comparePair(const pair<int, string>& p1,
                                  const pair<int, string>& p2) {
+    if (p1.first == p2.first) return p1.second > p2.second;
+    return p1.first < p2.first;
+}
+bool DictionaryTrie::comparePair_2(const pair<int, char>& p1,
+                                   const pair<int, char>& p2) {
     if (p1.first == p2.first) return p1.second > p2.second;
     return p1.first < p2.first;
 }

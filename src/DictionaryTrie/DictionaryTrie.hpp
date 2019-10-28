@@ -70,7 +70,7 @@ class DictionaryTrie {
     // priority_queue 最小堆
     // 比较函数  p1<p2 返回真 否则为假  频率一样 字母越小 越大
     bool comparePair(const pair<int, string>& p1, const pair<int, string>& p2);
-
+    bool comparePair_2(const pair<int, char>& p1, const pair<int, char>& p2);
     struct cmp {
         bool operator()(const pair<int, string>& a,
                         const pair<int, string>& b) {
