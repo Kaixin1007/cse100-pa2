@@ -250,25 +250,25 @@ void DictionaryTrie::findChildren(Node*& node, string word,
     }
 
     // iterator nodes according to max_frequency order
-    for (int i = 0; i < node->word_sort.size(); i++) {
-        curNode = node->word_sort[i];
-        // when current node < heap.min,  break down
-        if (prefixword.size() >= numCompletions) {
-            if (prefixword.top().first > curNode.first) {
-                break;
-            }
-        }
-        findChildren(node->map_word[curNode.second], word + curNode.second,
-                     numCompletions);
-    }
-
-    // for (auto it : node->map_word) {
-    //     if (it.second != nullptr) {
-    //         temp = temp + it.first;
-    //         findChildren(it.second, temp, numCompletions);
-    //         temp = word;
+    // for (int i = 0; i < node->word_sort.size(); i++) {
+    //     curNode = node->word_sort[i];
+    //     // when current node < heap.min,  break down
+    //     if (prefixword.size() >= numCompletions) {
+    //         if (prefixword.top().first > curNode.first) {
+    //             break;
+    //         }
     //     }
+    //     findChildren(node->map_word[curNode.second], word + curNode.second,
+    //                  numCompletions);
     // }
+    string temp;
+    for (auto it : node->map_word) {
+        if (it.second != nullptr) {
+            temp = temp + it.first;
+            findChildren(it.second, temp, numCompletions);
+            temp = word;
+        }
+    }
 }
 
 //
