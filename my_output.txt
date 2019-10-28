@@ -1,1 +1,966 @@
 Reading file: data/unique_freq_dict.txt
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+of
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+do
+dont
+did
+day
+down
+didnt
+doing
+during
+does
+doesnt
+different
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+with
+was
+we
+what
+who
+would
+will
+when
+which
+want
+well
+were
+way
+whats
+woman
+work
+why
+world
+wont
+wouldnt
+where
+while
+week
+without
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+the
+to
+that
+this
+they
+their
+thats
+think
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+go
+get
+got
+going
+good
+give
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+have
+has
+had
+hand
+happen
+havent
+having
+hard
+happened
+hands
+half
+hair
+happy
+hang
+happens
+haha
+hal
+handle
+hasnt
+happening
+hate
+harry
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+could
+couldnt
+country
+course
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+for
+from
+first
+find
+feel
+family
+few
+fact
+father
+four
+friend
+far
+friends
+face
+five
+follow
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+ets
+ethan
+ety
+etext
+ethnic
+etait
+ettan
+ethans
+etexts
+eternal
+etc
+ethics
+ethical
+et
+eternity
+etas
+eths
+etic
+etui
+etape
+ethos
+etnas
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+nn
+nnw
+nnu
+nnt
+nno
+nnno
+nne
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+up
+use
+us
+under
+until
+understand
+um
+uhoh
+upon
+using
+usually
+uhhuh
+uh
+unit
+university
+u
+unless
+understanding
+used
+umm
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+kshatriyas
+kshatriya
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+yr
+yrs
+yron
+yrja
+yrh
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+question
+quite
+quickly
+quality
+questions
+quimby
+quick
+quiet
+quarter
+qex
+qau
+quand
+q
+quote
+quinn
+quit
+quartermaine
+que
+quelque
+quietly
+questioning
+quelques
+queer
+quarters
+qualify
+quarterback
+quils
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+just
+job
+join
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+lets
+let
+leave
+least
+learn
+lead
+level
+less
+leader
+leo
+left
+learned
+lenny
+letter
+leaving
+leg
+legal
+leur
+legs
+leadership
+lesson
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+do
+dont
+did
+day
+down
+didnt
+doing
+during
+does
+doesnt
+different
+doh
+done
+door
+die
+death
+days
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+is
+in
+i
+it
+im
+if
+its
+into
+ive
+id
+isnt
+issue
+important
+idea
+include
+information
+including
+interest
+international
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+xpage
+xander
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+you
+youre
+your
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+people
+put
+problem
+place
+part
+play
+program
+point
+provide
+power
+political
+pay
+president
+person
+public
+party
+parent
+probably
+process
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+even
+every
+each
+eye
+ever
+end
+everything
+enough
+ets
+em
+education
+early
+eh
+else
+experience
+eyes
+expect
+effect
+economic
+effort
+explain
+everyone
+eat
+especially
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+up
+use
+us
+under
+until
+understand
+um
+uhoh
+upon
+using
+usually
+uhhuh
+uh
+unit
+university
+u
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+pneuma
+pneumas
+pneumonic
+pneumonias
+pneumococci
+pneumograph
+pneumonites
+pneumonitis
+pneumaticity
+pneumatology
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+be
+but
+by
+bart
+because
+back
+been
+between
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+kwikemart
+kwan
+kwacha
+kwanza
+kwam
+kwanzas
+kwh
+kwang
+kwashiorkor
+kwashiorkors
+kwon
+kwans
+kwamen
+kwaini
+kw
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+question
+quite
+quickly
+quality
+questions
+quimby
+quick
+quiet
+quarter
+qex
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+Continue? (y/n)
+Enter a prefix/pattern to search for:
+Enter a number of completions:
+and
+a
+at
+are
+as
+all
+about
+an
+also
+any
+after
+ask
+another
+again
+american
+against
+always
+away
+area
+around
+Continue? (y/n)

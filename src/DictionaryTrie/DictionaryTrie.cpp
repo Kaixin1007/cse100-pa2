@@ -261,7 +261,7 @@ void DictionaryTrie::findChildren(Node*& node, string word,
     //     findChildren(node->map_word[curNode.second], word + curNode.second,
     //                  numCompletions);
     // }
-    string temp;
+    string temp = word;
     for (auto it : node->map_word) {
         if (it.second != nullptr) {
             temp = temp + it.first;
