@@ -248,7 +248,10 @@ void DictionaryTrie::findChildren(Node*& node, string word,
             }
         }
     }
+    // string temp = word;
+    // for (auto it : node->map_word) {
 
+    // }
     // iterator nodes according to max_frequency order
     // for (int i = 0; i < node->word_sort.size(); i++) {
     //     curNode = node->word_sort[i];
@@ -261,14 +264,13 @@ void DictionaryTrie::findChildren(Node*& node, string word,
     //     findChildren(node->map_word[curNode.second], word + curNode.second,
     //                  numCompletions);
     // }
+    //直接遍历
     string temp = word;
     for (auto it : node->map_word) {
-        if (it.second != nullptr) {
-            temp = temp + it.first;
-            findChildren(it.second, temp, numCompletions);
-            temp = word;
+        temp = temp + it.first;
+        findChildren(it.second, temp, numCompletions);
+        temp = word;
         }
-    }
 }
 
 //

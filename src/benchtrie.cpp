@@ -25,7 +25,9 @@ void testRuntime(string filename) {
     Timer timer;
     vector<string> results;
     long long time = 0;
-
+    long long standard[5] = {20326892719, 2746898462, 1699341865, 14671549,
+                             35712619};
+    double average = 0;
     // Test 1: iterate through alphabet prefix
     cout << "\nTest 1: prefix = \"iterating through alphabet\", "
          << "numCompletions = " << NUM_COMP << endl;
@@ -36,6 +38,7 @@ void testRuntime(string filename) {
         count += results.size();
     }
     time = timer.end_timer();
+    average += standard[0] * 1.0 / time;
     cout << "\tTime taken: " << time << " nanoseconds." << endl;
     cout << "\tResults found: " << count << endl;
 
@@ -44,6 +47,7 @@ void testRuntime(string filename) {
     timer.begin_timer();
     results = trie->predictCompletions("a", NUM_COMP);
     time = timer.end_timer();
+    average += standard[1] * 1.0 / time;
     cout << "\tTime taken: " << time << " nanoseconds." << endl;
     cout << "\tResults found: " << results.size() << endl;
 
@@ -52,6 +56,7 @@ void testRuntime(string filename) {
     timer.begin_timer();
     results = trie->predictCompletions("the", NUM_COMP);
     time = timer.end_timer();
+    average += standard[2] * 1.0 / time;
     cout << "\tTime taken: " << time << " nanoseconds." << endl;
     cout << "\tResults found: " << results.size() << endl;
 
@@ -60,6 +65,7 @@ void testRuntime(string filename) {
     timer.begin_timer();
     results = trie->predictCompletions("app", NUM_COMP);
     time = timer.end_timer();
+    average += standard[3] * 1.0 / time;
     cout << "\tTime taken: " << time << " nanoseconds." << endl;
     cout << "\tResults found: " << results.size() << endl;
 
@@ -68,9 +74,11 @@ void testRuntime(string filename) {
     timer.begin_timer();
     results = trie->predictCompletions("man", NUM_COMP);
     time = timer.end_timer();
+    average += standard[4] * 1.0 / time;
     cout << "\tTime taken: " << time << " nanoseconds." << endl;
     cout << "\tResults found: " << results.size() << endl;
 
+    cout << "\t Average time/standard:" << average << endl;
     // Addtional tests
     cout << "\nWould you like to run additional tests? (y/n) ";
     string response;
