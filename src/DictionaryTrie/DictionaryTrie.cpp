@@ -111,19 +111,6 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
         }
         sort(node->word_sort.begin(), node->word_sort.end(),
              greater<pair<int, char>>());
-        // 新增代码————————————————————————
-        if (node->isCompressed == true) {
-            node->isCompressed = false;
-        } else {
-            // 当前只存在一个节点时候,且当前不是节点,且没有被遍历过
-            if (node->word_sort.size() == 1 && node->freq == 0 &&
-                !node->isIterator) {
-                node->isCompressed = true;
-                node->isIterator = true;
-                //当前CW 储存着下一节点压缩的值 + 下一节点的值
-                node->compressedWord = next->compressedWord + word[count];
-            }
-        }
 
         // node->word_sort.push(make_pair(freq, word[count]));
         // if ((node->word_sort1.empty()))
@@ -159,18 +146,6 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
         }
         sort(node->word_sort.begin(), node->word_sort.end(),
              greater<pair<int, char>>());
-        // 新增代码————————————————————————
-        // 如果节点已经压缩，需要返回
-        if (node->isCompressed == true) {
-            node->isCompressed = false;
-        }
-        // 递归回去时候 当前节点只有一个子节点且当前不是节点的时候，压缩节点
-        if (node->word_sort.size() == 1 && node->freq == 0 &&
-            nextNode->isCompressed == true && !node->isIterator) {
-            node->isCompressed = true;
-            node->isIterator = true;
-            node->compressedWord = word[count] + nextNode->compressedWord;
-        }
 
         // node->word_sort.push(make_pair(freq, word[count]));
 
@@ -273,23 +248,7 @@ void DictionaryTrie::findChildren(Node*& node, string word,
             }
         }
     }
-    if (node->isCompressed) {
-        curNode = node->word_sort[0];
-        if (prefixword.size() >= numCompletions) {
-            if (prefixword.top().first > curNode.first) {
-                return;
-            }
-        }
-        if (prefixword.size() < numCompletions) {
-            prefixword.push(
-                make_pair(curNode.first, word + node->compressedWord));
-        } else {
-            prefixword.push(
-                make_pair(curNode.first, word + node->compressedWord));
-            prefixword.pop();
-        }
-        return;
-    }
+
     // iterator nodes according to max_frequency order
     for (int i = 0; i < node->word_sort.size(); i++) {
         curNode = node->word_sort[i];
@@ -422,7 +381,6 @@ void DictionaryTrie::predictUnderscoresHelper(Node*& root, string pattern,
         } else
             return;
     } else {
-        // 下划线
         for (auto it = node->map_word.begin(); it != node->map_word.end();
              ++it) {
             string temp = str;

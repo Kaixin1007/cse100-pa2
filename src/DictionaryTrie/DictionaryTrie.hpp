@@ -39,14 +39,11 @@ class DictionaryTrie {
         unsigned int max_freq;
         // stores sorted words according to their frequency
         vector<pair<int, char>> word_sort;
-        bool isCompressed;
-        bool isIterator;
-        string compressedWord;
         // vector<pair<int, char>> word_sort1;
         // constructor
         Node() {
             freq = max_freq = 0;
-            isCompressed = isIterator = false;
+           
         }
     };
     /**
