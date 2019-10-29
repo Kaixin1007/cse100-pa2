@@ -38,8 +38,8 @@ class DictionaryTrie {
         // stores the node's max frequency
         unsigned int max_freq;
         // stores sorted words according to their frequency
-        vector<pair<int, char>> word_sort;
-        // vector<pair<int, char>> word_sort1;
+        // vector<pair<int, char>> word_sort;
+
         // constructor
         Node() { freq = max_freq = 0; }
     };

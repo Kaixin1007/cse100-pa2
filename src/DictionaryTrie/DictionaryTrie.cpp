@@ -100,19 +100,21 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
         next->freq = freq;
         next->max_freq = next->max_freq > freq ? next->max_freq : freq;
 
-        if (isNew) {
-            node->word_sort.push_back(make_pair(next->max_freq, word[count]));
-        } else {
-            // find the object
-            char character = word[count];
-            auto it = find_if(node->word_sort.begin(), node->word_sort.end(),
-                              [&character](const pair<int, char>& element) {
-                                  return element.second == character;
-                              });
-            it->first = it->first > next->max_freq ? it->first : next->max_freq;
-        }
-        sort(node->word_sort.begin(), node->word_sort.end(),
-             greater<pair<int, char>>());
+        // if (isNew) {
+        //     node->word_sort.push_back(make_pair(next->max_freq,
+        //     word[count]));
+        // } else {
+        //     // find the object
+        //     char character = word[count];
+        //     auto it = find_if(node->word_sort.begin(), node->word_sort.end(),
+        //                       [&character](const pair<int, char>& element) {
+        //                           return element.second == character;
+        //                       });
+        //     it->first = it->first > next->max_freq ? it->first :
+        //     next->max_freq;
+        // }
+        // sort(node->word_sort.begin(), node->word_sort.end(),
+        //      greater<pair<int, char>>());
 
         // node->word_sort.push(make_pair(freq, word[count]));
         // if ((node->word_sort1.empty()))
@@ -133,21 +135,22 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
     Node* nextNode = node->map_word[word[count]];
     bool sub = insert(nextNode, word, freq, count + 1);
     if (sub == true) {
-        if (isNew) {
-            node->word_sort.push_back(
-                make_pair(nextNode->max_freq, word[count]));
-        } else {
-            // find the object
-            char character = word[count];
-            auto it = find_if(node->word_sort.begin(), node->word_sort.end(),
-                              [&character](const pair<int, char>& element) {
-                                  return element.second == character;
-                              });
-            it->first =
-                it->first > nextNode->max_freq ? it->first : nextNode->max_freq;
-        }
-        sort(node->word_sort.begin(), node->word_sort.end(),
-             greater<pair<int, char>>());
+        // if (isNew) {
+        //     node->word_sort.push_back(
+        //         make_pair(nextNode->max_freq, word[count]));
+        // } else {
+        //     // find the object
+        //     char character = word[count];
+        //     auto it = find_if(node->word_sort.begin(), node->word_sort.end(),
+        //                       [&character](const pair<int, char>& element) {
+        //                           return element.second == character;
+        //                       });
+        //     it->first =
+        //         it->first > nextNode->max_freq ? it->first :
+        //         nextNode->max_freq;
+        // }
+        // sort(node->word_sort.begin(), node->word_sort.end(),
+        //      greater<pair<int, char>>());
 
         // node->word_sort.push(make_pair(freq, word[count]));
 
@@ -197,7 +200,6 @@ void DictionaryTrie::getAllchildren(Node*& root, string prefix,
                                     unsigned int numCompletions) {
     Node* node = root;
     string temp = prefix;
-    unsigned int cnt = 0;
     // run to the prefix's end word
     for (int i = 0; i < prefix.length(); ++i) {
         if (node->map_word.find(prefix[i]) != node->map_word.end()) {
@@ -251,17 +253,18 @@ void DictionaryTrie::findChildren(Node*& node, string word,
             }
         }
     }
-    string temp = word;
     for (auto it : node->map_word) {
         curNode = make_pair(it.second->max_freq, it.first);
         myquene.push(curNode);
     }
-    for (int i = 0; i < myquene.size(); ++i) {
+    int length = myquene.size();
+    for (int i = 0; i < length; ++i) {
         curNode = myquene.top();
         if (prefixword.size() >= numCompletions)
             if (prefixword.top().first > curNode.first) break;
-        findChildren(node->map_word[curNode.second], word + curNode.second,
-                     numCompletions);
+        myquene.pop();
+        string wordnext = word + curNode.second;
+        findChildren(node->map_word[curNode.second], wordnext, numCompletions);
     }
     // iterator nodes according to max_frequency order
     // for (int i = 0; i < node->word_sort.size(); i++) {
@@ -276,13 +279,13 @@ void DictionaryTrie::findChildren(Node*& node, string word,
     //                  numCompletions);
     // }
 
-    // //直接遍历
+    //直接遍历
     // string temp = word;
     // for (auto it : node->map_word) {
     //     temp = temp + it.first;
     //     findChildren(it.second, temp, numCompletions);
     //     temp = word;
-    //     }
+    // }
 }
 
 //

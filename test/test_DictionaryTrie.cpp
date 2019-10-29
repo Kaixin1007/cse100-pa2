@@ -36,9 +36,9 @@ TEST(DictTrieTests, INSERT_TEST) {
     dict.insert("aaa", 6);
     dict.insert("aef", 7);
     dict.insert("degr", 8);
-    dict.insert("american", 12);
-    dict.insert("america", 11);
-    dict.insert("am", 16);
+    // dict.insert("american", 12);
+    // dict.insert("america", 11);
+    // dict.insert("am", 16);
     dict.insert("again", 13);
     dict.insert("aga", 1);
     dict.insert("a", 11);
