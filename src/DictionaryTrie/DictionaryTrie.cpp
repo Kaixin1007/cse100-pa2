@@ -38,6 +38,7 @@ bool DictionaryTrie::find(string word) const {
 /* TODO */
 vector<string> DictionaryTrie::predictCompletions(string prefix,
                                                   unsigned int numCompletions) {
+    if (numCompletions == 0) return {};
     my_quene empty;
     swap(empty, prefixword);  // clear quene
     getAllchildren(root, prefix, numCompletions);
@@ -57,6 +58,7 @@ vector<string> DictionaryTrie::predictCompletions(string prefix,
 /* TODO */
 std::vector<string> DictionaryTrie::predictUnderscores(
     string pattern, unsigned int numCompletions) {
+    if (numCompletions == 0) return {};
     Node* node = root;
     predictUnderscoresHelper(node, pattern, numCompletions, 0, "");
     numCompletions = numCompletions < underscoresword.size()
