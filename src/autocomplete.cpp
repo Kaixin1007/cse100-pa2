@@ -1,5 +1,10 @@
 /*
- * TODO: File Header
+ * @Descripttion: The user will be prompted to enter the prefix of a word, and
+ * the number of suggestions to complete. Then, the program will output the most
+ * frequent suggestions of the given prefix.
+ * @version: 1.0
+ * @Author: Kaixin Lin
+ * @Date: 2019-10-29 22:01:59
  */
 #include <fstream>
 #include <iostream>
@@ -76,11 +81,12 @@ int main(int argc, char** argv) {
         for (int i = 0; i < word.length(); i++) {
             if (word[i] == '_') isUnderscores = true;
         }
+        // if no any Underscore exists, it will predictCompletions
         if (isUnderscores == false)
             words = dt->predictCompletions(word, numberOfCompletions);
         else
             words = dt->predictUnderscores(word, numberOfCompletions);
-        // TODO
+        // print out word
         for (auto i : words) {
             cout << i << endl;
         }

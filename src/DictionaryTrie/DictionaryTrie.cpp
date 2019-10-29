@@ -1,24 +1,32 @@
-/**
- * DictionaryTrie.cpp
- *
- * Author:Kaixin Lin
- * Finished PA2
- * It implements MWT to achieve auto-completer included predict Underscores and
- * predict Completions
+/*
+ * @Descripttion: It implements MWT to achieve auto-completer
+ * included predict Underscores and predict Completions
+ * @version: 1.0
+ * @Author: Kaixin Lin
+ * @Date: 2019-10-29 22:01:59
  */
+
 #include "DictionaryTrie.hpp"
 #include <iostream>
 
-/* TODO */
+/* DictionaryTrie constructor */
 DictionaryTrie::DictionaryTrie() { root = nullptr; }
 
-/* TODO */
+/**
+ * @name:   insert
+ * @brief:  insert a word to MWT
+ * @return: Return true if insert successfully
+ */
 bool DictionaryTrie::insert(string word, unsigned int freq) {
     return insert(root, word, freq, 0);
     // return insert(root, word, freq);
 }
 
-/* TODO */
+/**
+ * @name:   find
+ * @brief:  find word in MWT
+ * @return: Return true if find the word
+ */
 bool DictionaryTrie::find(string word) const {
     if (root == nullptr) return false;
     Node* cur = root;
@@ -35,19 +43,24 @@ bool DictionaryTrie::find(string word) const {
     return cur->freq > 0 ? true : false;
 }
 
-/* TODO */
+/**
+ * @name:   predictCompletions
+ * @brief:  predict Completions function
+ * @return: Return a vector holding up to numCompletions of the most
+ * frequent completions of prefix
+ */
 vector<string> DictionaryTrie::predictCompletions(string prefix,
                                                   unsigned int numCompletions) {
     if (numCompletions == 0) return {};
     my_quene empty;
     swap(empty, prefixword);  // clear quene
     getAllchildren(root, prefix, numCompletions);
+    // update numCompletions according to the prefixword's size
     numCompletions =
         numCompletions < prefixword.size() ? numCompletions : prefixword.size();
 
     vector<string> words(numCompletions);
     for (int j = 0; j < numCompletions; j++) {
-        // words[numCompletions - 1 - j] = prefixword.top().second;
         words[numCompletions - 1 - j] = prefixword.top().second;
         prefixword.pop();
     }
@@ -55,12 +68,22 @@ vector<string> DictionaryTrie::predictCompletions(string prefix,
     return words;
 }
 
-/* TODO */
+/**
+ * @name:   predictUnderscores
+ * @brief:  predict Underscores function
+ * @return: Return a vector holding up to numCompletions of the most
+ * frequent valid completions of pattern
+ */
 std::vector<string> DictionaryTrie::predictUnderscores(
     string pattern, unsigned int numCompletions) {
     if (numCompletions == 0) return {};
     Node* node = root;
+    // clear underscoresword
+    my_quene empty;
+    swap(empty, underscoresword);
+
     predictUnderscoresHelper(node, pattern, numCompletions, 0, "");
+    // update numCompletions
     numCompletions = numCompletions < underscoresword.size()
                          ? numCompletions
                          : underscoresword.size();
@@ -74,9 +97,10 @@ std::vector<string> DictionaryTrie::predictUnderscores(
     return words;
 }
 
-/* TODO */
+/* DictionaryTrie destructor  */
 DictionaryTrie::~DictionaryTrie() { deleteAll(root); }
 
+/*insert help function*/
 bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
                             unsigned int count) {
     if (root == nullptr) root = new Node();
@@ -196,10 +220,14 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
 //     node->max_freq = node->max_freq > freq ? node->max_freq : freq;
 //     return true;
 // }
+
+/**
+ * @name:   getAllchildren
+ * @brief:  DFS function to look for all children
+ */
 void DictionaryTrie::getAllchildren(Node*& root, string prefix,
                                     unsigned int numCompletions) {
     Node* node = root;
-    string temp = prefix;
     // run to the prefix's end word
     for (int i = 0; i < prefix.length(); ++i) {
         if (node->map_word.find(prefix[i]) != node->map_word.end()) {
@@ -209,13 +237,6 @@ void DictionaryTrie::getAllchildren(Node*& root, string prefix,
         }
     }
     findChildren(node, prefix, numCompletions);
-    // while ((!(node->word_sort.empty())) && cnt < numCompletions) {
-    //     findChildren(node, prefix, numCompletions);
-    //     cnt++;
-    // }
-    // if (node->freq > 0) {
-    //     prefixword.push(make_pair(node->freq, prefix));
-    // }
     return;
 }
 
@@ -232,16 +253,17 @@ void DictionaryTrie::getAllchildren(Node*& root, string prefix,
 //         node = node->map_word[max_node.second];
 //     }
 // }
+/**
+ * @name:   findChildren
+ * @brief:  DFS helper function to look for all children
+ */
 void DictionaryTrie::findChildren(Node*& node, string word,
                                   unsigned int numCompletions) {
-    // Node* node = root;
-    pair<int, char> curNode;
-    pair<int, string> insNode;
+    pair<int, char> curNode;    // store temp node in MWT
+    pair<int, string> insNode;  // store temp node in prefixword
     my_node_quene myquene;
     if (node == nullptr) return;
-    // if (prefixword.size() >= numCompletions)  // heap max
-    //     if ((prefixword.top().first > node->max_freq)) return;
-    // if node exists
+    // if node exists, update the heap
     if (node->freq > 0) {
         insNode = make_pair(node->freq, word);
         if (prefixword.size() < numCompletions) {
@@ -253,15 +275,20 @@ void DictionaryTrie::findChildren(Node*& node, string word,
             }
         }
     }
+    // iterator the whole node and push to the heap
     for (auto it : node->map_word) {
         curNode = make_pair(it.second->max_freq, it.first);
         myquene.push(curNode);
     }
     int length = myquene.size();
+    // get the kth biggest children in this node
     for (int i = 0; i < length; ++i) {
         curNode = myquene.top();
+        // if prefixword smallest node is bigger than the current node, break
+        // the loop
         if (prefixword.size() >= numCompletions)
             if (prefixword.top().first > curNode.first) break;
+
         myquene.pop();
         string wordnext = word + curNode.second;
         findChildren(node->map_word[curNode.second], wordnext, numCompletions);
@@ -362,6 +389,10 @@ void DictionaryTrie::findChildren(Node*& node, string word,
 //     //     }
 //     // }
 // }
+/**
+ * @name:   deleteAll
+ * @brief:  delete destructor helper function
+ */
 void DictionaryTrie::deleteAll(Node*& root) {
     if (root == nullptr) return;
     for (auto it : root->map_word) {
@@ -369,6 +400,7 @@ void DictionaryTrie::deleteAll(Node*& root) {
     }
     delete root;
 }
+/*predictUnderscores Help function*/
 void DictionaryTrie::predictUnderscoresHelper(Node*& root, string pattern,
                                               unsigned int num,
                                               unsigned int count, string str) {
@@ -407,16 +439,18 @@ void DictionaryTrie::predictUnderscoresHelper(Node*& root, string pattern,
         }
     }
 }
+/**
+ * @name:   comparePair
+ * @brief:  compared function according to frequency and alphabetical order
+ * @param:  Comparative variable
+ * @return: Return true if p1 > p2
+ */
 bool DictionaryTrie::comparePair(const pair<int, string>& p1,
                                  const pair<int, string>& p2) {
     if (p1.first == p2.first) return p1.second > p2.second;
     return p1.first < p2.first;
 }
-bool DictionaryTrie::comparePair_2(const pair<int, char>& p1,
-                                   const pair<int, char>& p2) {
-    if (p1.first == p2.first) return p1.second > p2.second;
-    return p1.first < p2.first;
-}
+
 // void DictionaryTrie::addPrefixword(const pair<int, string>& node,
 //                                    unsigned int numCompletions) {
 //     if (prefixword.size() < numCompletions) {

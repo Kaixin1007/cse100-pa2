@@ -1,9 +1,8 @@
-/**
- * TODO: test_DictionaryTrie.cpp
- *
- * Author:Kaixin Lin
- * Finished PA2
- * Test file about DictionaryTries
+/*
+ * @Descripttion: Test file about DictionaryTries' function
+ * @version: 1.0
+ * @Author: Kaixin Lin
+ * @Date: 2019-10-29 22:01:59
  */
 
 #include <algorithm>
@@ -26,6 +25,7 @@ TEST(DictTrieTests, EMPTY_TEST) {
 
     ASSERT_EQ(dict.find("abrakadabra"), false);
 }
+/* insert test */
 TEST(DictTrieTests, INSERT_TEST) {
     DictionaryTrie dict;
     vector<string> test, test1, test2;
@@ -36,9 +36,9 @@ TEST(DictTrieTests, INSERT_TEST) {
     dict.insert("aaa", 6);
     dict.insert("aef", 7);
     dict.insert("degr", 8);
-    // dict.insert("american", 12);
-    // dict.insert("america", 11);
-    // dict.insert("am", 16);
+    dict.insert("american", 12);
+    dict.insert("america", 11);
+    dict.insert("am", 16);
     dict.insert("again", 13);
     dict.insert("aga", 1);
     dict.insert("a", 11);
@@ -46,13 +46,9 @@ TEST(DictTrieTests, INSERT_TEST) {
     ASSERT_EQ(dict.find("abeed"), false);
     ASSERT_EQ(dict.insert("a", 5), false);
     test = dict.predictCompletions("a", 8);
-    test1 = dict.predictCompletions("a", 2);
-    // for (auto i : test) {
-    //     cout << i << endl;
-    // }
-    cout << "stop!" << endl;
 }
-TEST(DictTrieTests, UnDERSCORES_TEST) {
+// underscores test
+TEST(DictTrieTests, UNDERSCORES_TEST) {
     vector<string> t1, t2;
     DictionaryTrie dict;
     dict.insert("and", 15);
@@ -71,5 +67,4 @@ TEST(DictTrieTests, UnDERSCORES_TEST) {
 
     t1 = dict.predictUnderscores("__", 10);
     t2 = dict.predictUnderscores("_a", 10);
-    cout << "stop!" << endl;
 }
