@@ -30,9 +30,9 @@ class DictionaryTrie {
       public:
         // stores the node's frequency
         unsigned int freq;
-        // store all the subtree
+        // store all the children
         unordered_map<char, Node*> map_word;
-        // stores the node's max frequency
+        // stores the node's children max frequency
         unsigned int max_freq;
         // stores sorted words according to their frequency
         // constructor
@@ -92,6 +92,7 @@ class DictionaryTrie {
             return a.first > b.first;
         }
     };
+    // priority_quene for node
     typedef priority_queue<pair<int, string>, vector<pair<int, string>>, cmp>
         my_quene;
     typedef priority_queue<pair<int, char>, vector<pair<int, char>>,
@@ -100,7 +101,7 @@ class DictionaryTrie {
 
   public:
     Node* root;
-    // store result
+    // store result in heap
     my_quene prefixword;
     my_quene underscoresword;
 
