@@ -83,14 +83,8 @@ class DictionaryTrie {
 
     // structure for my_quene to compare
     struct cmp {
-        bool operator()(const pair<int, string>& a,
-                        const pair<int, string>& b) {
-            if (a.first == b.first) {
-                return a.second < b.second;
-            }
-
-            return a.first > b.first;
-        }
+        // compare function for prefix
+        bool operator()(const pair<int, string>& a, const pair<int, string>& b);
     };
     // priority_quene for node
     typedef priority_queue<pair<int, string>, vector<pair<int, string>>, cmp>

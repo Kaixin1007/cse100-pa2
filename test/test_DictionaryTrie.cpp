@@ -42,7 +42,7 @@ TEST(DictTrieTests, INSERT_TEST) {
     dict.insert("again", 13);
     dict.insert("aga", 1);
     dict.insert("a", 11);
-    ASSERT_EQ(dict.find("a"), true);
+    ASSERT_EQ(dict.find("at"), true);
     ASSERT_EQ(dict.find("abeed"), false);
     ASSERT_EQ(dict.insert("a", 5), false);
     test = dict.predictCompletions("a", 8);

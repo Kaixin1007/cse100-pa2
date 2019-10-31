@@ -29,6 +29,7 @@ bool DictionaryTrie::insert(string word, unsigned int freq) {
  */
 bool DictionaryTrie::find(string word) const {
     if (root == nullptr) return false;
+    if (word == "") return false;
     Node* cur = root;
 
     for (int i = 0; i < word.length() - 1; i++) {
@@ -253,4 +254,13 @@ bool DictionaryTrie::comparePair(const pair<int, string>& p1,
                                  const pair<int, string>& p2) {
     if (p1.first == p2.first) return p1.second > p2.second;
     return p1.first < p2.first;
+}
+// compare function for prefix
+bool DictionaryTrie::cmp::operator()(const pair<int, string>& a,
+                                     const pair<int, string>& b) {
+    if (a.first == b.first) {
+        return a.second < b.second;
+    }
+
+    return a.first > b.first;
 }
