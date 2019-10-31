@@ -1,3 +1,9 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: sueRimn
+ * @Date: 2019-10-31 00:36:13
+ */
 /**
  * Benchmark the autocomplete function in DictionaryTrie
  */
@@ -78,7 +84,7 @@ void testRuntime(string filename) {
     cout << "\tTime taken: " << time << " nanoseconds." << endl;
     cout << "\tResults found: " << results.size() << endl;
 
-    cout << "\t Average time/standard:" << average << endl;
+    // cout << "\t Average time/standard:" << average << endl;
     // Addtional tests
     cout << "\nWould you like to run additional tests? (y/n) ";
     string response;

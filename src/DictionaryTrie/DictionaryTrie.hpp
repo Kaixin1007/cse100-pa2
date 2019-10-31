@@ -63,14 +63,14 @@ class DictionaryTrie {
      * @name:   findChildren
      * @brief:  DFS helper function to look for all children
      */
-    void findChildren(Node*& root, string word, unsigned int numCompletions);
+    void findChildren(Node*& node, string word, unsigned int numCompletions);
 
     /**
      * @name:   predictUnderscoresHelper
      * @brief:  predict Underscores helper function
      * @return: void
      */
-    void predictUnderscoresHelper(Node*& node, string pattern,
+    void predictUnderscoresHelper(Node*& root, string pattern,
                                   unsigned int numCompletions,
                                   unsigned int count, string str);
     /**

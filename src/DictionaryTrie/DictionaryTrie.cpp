@@ -105,13 +105,12 @@ bool DictionaryTrie::insert(Node*& root, string word, unsigned int freq,
                             unsigned int count) {
     if (root == nullptr) root = new Node();
     Node* node = root;
-    bool isNew = false;
     node->max_freq = node->max_freq > freq ? node->max_freq : freq;
 
     if (node->map_word.find(word[count]) == node->map_word.end()) {
         // the node doesn't exist  new Node
         node->map_word[word[count]] = new Node();
-        isNew = true;
+
     } else {
         // if the end node exists and its frequency >0 the insert fails.
         if (count == word.length() - 1) {
@@ -254,6 +253,7 @@ bool DictionaryTrie::comparePair(const pair<int, string>& p1,
     if (p1.first == p2.first) return p1.second > p2.second;
     return p1.first < p2.first;
 }
+
 // compare function for prefix
 bool DictionaryTrie::cmp::operator()(const pair<int, string>& a,
                                      const pair<int, string>& b) {
