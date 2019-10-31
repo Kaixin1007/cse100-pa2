@@ -33,8 +33,7 @@ bool DictionaryTrie::find(string word) const {
     Node* cur = root;
 
     for (int i = 0; i < word.length() - 1; i++) {
-        if (cur->map_word.find(word[word.length() - 1]) == cur->map_word.end())
-            return false;
+        if (cur->map_word.find(word[i]) == cur->map_word.end()) return false;
         cur = cur->map_word[word[i]];
     }
     // the last key not equal

@@ -46,6 +46,8 @@ TEST(DictTrieTests, INSERT_TEST) {
     ASSERT_EQ(dict.find("abeed"), false);
     ASSERT_EQ(dict.insert("a", 5), false);
     test = dict.predictCompletions("a", 8);
+    test1 = dict.predictCompletions("am", 8);
+    test2 = dict.predictCompletions("an", 8);
 }
 // underscores test
 TEST(DictTrieTests, UNDERSCORES_TEST) {
