@@ -159,7 +159,7 @@ void DictionaryTrie::findChildren(Node*& node, string word,
     pair<int, string> insNode;  // store temp node in prefixword
     my_node_quene myquene;
     if (node == nullptr) return;
-    // if node exists, update the heap
+    // if node exists, update the result min-heap
     if (node->freq > 0) {
         insNode = make_pair(node->freq, word);
         if (prefixword.size() < numCompletions) {
@@ -171,8 +171,8 @@ void DictionaryTrie::findChildren(Node*& node, string word,
             }
         }
     }
-    // use heap to search kth biggest node according to the maxBelow frequency
-    // iterator the whole node and push to the heap
+    // use heap to search kth biggest node according to the maxBelow
+    // frequency iterator the whole node and push to the heap
     for (auto it : node->map_word) {
         curNode = make_pair(it.second->max_freq, it.first);
         myquene.push(curNode);
@@ -254,7 +254,7 @@ bool DictionaryTrie::comparePair(const pair<int, string>& p1,
     return p1.first < p2.first;
 }
 
-// compare function for prefix
+// compare function for prefix in cmp structure
 bool DictionaryTrie::cmp::operator()(const pair<int, string>& a,
                                      const pair<int, string>& b) {
     if (a.first == b.first) {
